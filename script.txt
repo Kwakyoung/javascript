@@ -1,0 +1,21 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        // 실행용 코드 : HTML CSS 조작/제어 하거나 이벤트를 처리하거나 Ajax 통신하거나..
+        $(document).ready(function(){
+            // jQuery 시작 코드 [정적인 파일들 HTML, CSS, JS, IMAGE 로드된 뒤 스크립트 실행]
+        });
+
+        // ↑긴버전 vs ↓짧은버전
+
+        $(function(){
+            // jQuery 시작 코드 [정적인 파일들 HTML, CSS, JS, IMAGE 로드된 뒤 스크립트 실행]
+        });
+
+        <jQuery>
+        var : ES5버전에서 (과거/오랫동안 사용~ 지금도, 하지만 가급적이면 앞으로는?) /변수
+        ※ 선언이나 할당/재할당에서 발생할수 있는 문제가 있어서 var는 가급적 피하ㅏㅈ!
+
+        
+        let : ES6버전 (지금부터 앞으로 오랫동안 사용할... 가급적사용) / 변수
+        const : ES6버전 "(상동) / 상수
