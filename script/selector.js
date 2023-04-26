@@ -51,6 +51,7 @@ $(function(){
             backgroundRepeat : "no-repeat",
             backgroundPosition : "center"
         })
+    });
     //     display.css("background-image","url('images/bg.jpg')"); // : css 조작 메소드
     //     display.css("background-size","cover"); // : css 조작 메소드
     //     display.css("background-position","center"); // : css 조작 메소드
@@ -58,7 +59,13 @@ $(function(){
     // });
     // $("#id");
     // $(".class");
+    $("#closePop").click(closePopup);
 
-})
-})
+});
+
+    function closePopup(){
+        console.log("팝업닫기!!");
+    }    
+
+
 
