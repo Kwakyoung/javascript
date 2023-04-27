@@ -24,6 +24,8 @@ header {
     height: 400px;
     position: absolute;
     width: 100%;
+    transition: all .4s ease-in-out;
+    opacity: .5;
   }
   .bg-pink {
     background: pink;
@@ -64,4 +66,5 @@ header {
   }
   .top {
     z-index: 1;
+    opacity: 1;
   }
