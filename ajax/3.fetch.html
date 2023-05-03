@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch API</title>
+    <style>
+        .item li{
+            display: flex;                        
+            position: relative;
+        }
+        .item li::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #eee;
+            position: absolute;
+            left: 0;
+            bottom: 0            
+        }
+        .item img {
+            order: 1;
+            width: 150px;
+        }
+        .item span {
+            order: 2;
+        }
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: dodgerblue;
+            padding: 1rem 1.25rem;
+            height: 30px;
+            border-radius: 20px;
+            order: 3
+        }
+    </style>
+</head>
+<body>
+    <h1>fetch를 이용한 비동기 통신</h1>
+    <p>jQuery를 사용하지 않거나 Internet Explorer를 고려하지 않아도 되는 상황에서
+    <br>비동기 처리</p>
+    <div class="movies">
+        <!-- document.querySelector()를 이용하려면 DOM을 만들어 놓고 하세요!
+        <div class="movie_img">
+
+        </div>
+        <div class="movie_info">
+            <div class="title"></div>
+            <div class="producer"></div>
+            <div class="genres"></div>
+            <div class="open_year"></div>
+            <div class="open_year"></div>
+        </div>
+        -->
+    </div>
+    <script>
+        // 화살표 함수(arrow function) : =>
+        var apiURL = "https://yts.mx/api/v2/list_movies.json?limit=50?minimum_rating=7";
+        // "https://api.coinpaprika.com/v1/tickers" : 코인파프리카는 시간당 60회이상 요청시 제한!
+        fetch(apiURL)
+        .then(response => response.json())
+        .then(json => {
+            // 할일
+            // table row를 만들어서 데이터와 결합하고, 그걸 출력한다던지~
+            var movies = json.data.movies;
+            // for ~ of문 : array loop
+            console.log(movies);
+            for(movie of movies) {
+                var ul = document.createElement("ul");
+                ul.classList.add("item");
+                var li = document.createElement("li");
+                var p = document.createElement("p");
+                p.textContent = movie.title;
+                var img = document.createElement("img");
+                img.src = movie.medium_cover_image;                
+                var span =document.createElement("span");
+                span.textContent = movie.year;
+                var a = document.createElement("a");
+                a.href = movie.url;
+                a.textContent = "자세히 보기";
+                a.target = "_blank";
+                a.classList.add("btn");
+                
+                li.appendChild(p);
+                li.appendChild(img);
+                li.appendChild(span);
+                li.appendChild(a);
+                ul.appendChild(li);                
+                
+                var movieContainer = document.querySelector(".movies");
+                movieContainer.appendChild(ul);
+            }
+        });        
+    </script>
+</body>
+</html>
